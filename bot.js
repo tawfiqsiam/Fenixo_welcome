@@ -582,7 +582,7 @@ client.on('channelCreate', channel => {
     if(!channel.guild.member(client.user).hasPermission('EMBED_LINKS')) return;
     if(!channel.guild.member(client.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
-    var logChannel = channel.guild.channels.find(c => c.name === 'log');
+    var logChannel = channel.guild.channels.find(c => c.name === 'logs');
     if(!logChannel) return;
  
     if(channel.type === 'text') {
