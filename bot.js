@@ -5,6 +5,7 @@ const fs = require('fs');
 const moment = require('moment');
 const jimp = require('jimp');
 const Canvas = require('canvas');
+const data = {}
 client.on('ready', () => {
    console.log(`----------------`);
       console.log(`By : lg server.`);
@@ -1257,9 +1258,7 @@ u.guild.members.get(ss.executor.id).roles.forEach(r => {
         },60000)
     };
     });
-    fs.writeFile("./data.json", JSON.stringify(data) ,(err) =>{
-        if (err) console.log(err.message);
-    });
+   
 });
 client.on('roleDelete', (u) => { 
     u.guild.fetchAuditLogs().then( s => {
@@ -1286,9 +1285,7 @@ u.guild.members.get(ss.executor.id).roles.forEach(r => {
         },60000)
     };
     });
-    fs.writeFile("./data.json", JSON.stringify(data) ,(err) =>{
-        if (err) console.log(err.message);
-    });
+   
 });
 client.on('guildMemberAdd',member => {
 try {
