@@ -237,7 +237,7 @@ msg.delete();
 }
 });
  client.on('message', message => {
-                    if(message.content.startsWith ("*marry")) {
+                    if(message.content.startsWith (prefix + "marry")) {
                     if(!message.channel.guild) return message.reply('** This command only for servers **')
                     var proposed = message.mentions.members.first()
                    
