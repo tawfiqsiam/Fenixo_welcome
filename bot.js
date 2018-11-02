@@ -265,7 +265,7 @@ msg.delete();
                           .setColor('#36393e') 
                             message.channel.send(embed);
                
-              const filter = m => m.content.startsWith("موافقة");
+              const filter = m => m.content.startsWith("yes");
               message.channel.awaitMessages(filter, { max: 1, time: 15000, errors: ['time'] })
               .then(collected =>{ 
                   let embed = new Discord.RichEmbed()
