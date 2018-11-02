@@ -236,6 +236,66 @@ msg.delete();
 })
 }
 });
+ client.on('message', message => {
+                    if(message.content.startsWith ("*marry")) {
+                    if(!message.channel.guild) return message.reply('** This command only for servers **')
+                    var proposed = message.mentions.members.first()
+                   
+                    if(!message.mentions.members.first()) return 
+                      let embed3 = new Discord.RichEmbed()
+                         .setDescription(`اختر واحدة`)
+                          .setColor('#36393e') 
+                            message.channel.send(embed3);
+                    if(message.mentions.users.size > 1) return 
+                     let embed2 = new Discord.RichEmbed()
+                         .setDescription(`just one!`)
+                          .setColor('#36393e') 
+                            message.channel.send(embed2);
+                     if(proposed === message.author) return 
+                      let embed1 = new Discord.RichEmbed()
+                         .setDescription(`خنتى ?`)
+                          .setColor('#36393e') 
+                            message.channel.send(embed1);
+                      if(proposed === client.user) return message.reply(`** تبي تتزوجني؟ **`);
+                        let  = new Discord.RichEmbed()
+                         .setDescription(`**${proposed} 
+               بدك تقبلي عرض الزواج من ${message.author}
+               العرض لمدة 15 ثانية 
+               اكتب موافقة او لا** `)
+                          .setColor('#36393e') 
+                            message.channel.send(embed);
+               
+              const filter = m => m.content.startsWith("موافقة");
+              message.channel.awaitMessages(filter, { max: 1, time: 15000, errors: ['time'] })
+              .then(collected =>{ 
+                  let embed = new Discord.RichEmbed()
+                         .setDescription(`**${message.author} و ${proposed} الف الف مبروك الله يرزقكم الذرية الصالحة**`)
+                          .setColor('#36393e') 
+                            message.channel.send(embed);
+              })
+                 .catch(collected => { 
+                  let embed = new Discord.RichEmbed()
+                         .setDescription(`**السكوت علامة الرضا نقول مبروك ؟**`)
+                          .setColor('#36393e') 
+                            message.channel.send(embed);
+                 })
+                 const filte = m => m.content.startsWith("لا");
+              message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
+              .then(collected =>{ 
+                  let embed = new Discord.RichEmbed()
+                         .setDescription(`  **${message.author} تم رفض عرضك**`)
+                          .setColor('#36393e') 
+                            message.channel.send(embed);
+              })
+                      
+              
+                           
+                  
+                }
+              }); 
+              
+
+
 client.on('message' , message => {
   var prefix = "*";
   if(message.author.bot) return;
