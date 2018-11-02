@@ -1,28 +1,10 @@
 {
-  "name": "plustest",
-  "description": "plustest",
-  "version": "2.0.0",
+  "name": "Test",
+  "description": "Test",
+  "version": "0.0.0",
   "main": "bot.js",
   "scripts": {
-    "start": "node bot.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/then/fs.git"
-  },
-  "keywords": [
-    "promise",
-    "then",
-    "fs",
-    "core"
-  ],
-  "author": "Nathan Zadoks",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/then/fs/issues"
-  },
-  "devDependencies": {
-    "bash-color": "0.0.3"
+    "start": "node ask.js"
   },
   "dependencies": {
     
