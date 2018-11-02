@@ -1,40 +1,73 @@
 {
-  "name": "aaaaaaaaaa",
-  "version": "2.1.0",
-  "description": "aaaaaaaa",
+  "name": "plustest",
+  "description": "plustest",
+  "version": "2.0.0",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
   },
-  "dependencies": {
-    "ascii-data-table": "^2.1.1",
-    "canvas": "^1.6.10",
-    "dateformat": "^3.0.3",
-    "discord.js": "^11.4.2",
-    "express": "^4.16.3",
-    "ffmpeg": "0.0.4",
-    "ffmpeg-binaries": "^3.2.2-3",
-    "fs": "0.0.2",
-    "get-youtube-id": "^1.0.0",
-    "jimp": "^0.2.28",
-    "moment": "^2.22.1",
-    "ms": "^2.1.1",
-    "google-translate-api": "^2.3.0", 
-    "opusscript": "0.0.6",
-    "quick.db": "^6.2.0",
-    "request": "^2.85.0",
-    "pretty-ms": "^3.2.0",
-    "random-number": "^0.0.9",
-    "simple-youtube-api": "^5.0.2",
-    "snekfetch": "^3.6.4",
-    "sqlite": "^2.9.1",
-    "sqlite3": "^4.0.0",
-    "youtube-info": "^1.2.0",
-    "ytdl-core": "^0.20.3",
-"giphy-api":"^1.2.7",
-"goo.gl":"^0.1.4"
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/then/fs.git"
   },
-  "engines": {
-    "node": "8.4.0"
+  "keywords": [
+    "promise",
+    "then",
+    "fs",
+    "core"
+  ],
+  "author": "Nathan Zadoks",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/then/fs/issues"
+  },
+  "devDependencies": {
+    "bash-color": "0.0.3"
+  },
+  "dependencies": {
+    
+"canvas": "1.6.10",
+    "dateformat": "3.0.3",
+    "discord.js": "11.1.0",
+    "ffmpeg-binaries": "3.2.2-3",
+    "fs": "0.0.1-security",
+    "get-youtube-id": "^1.0.0",
+    "moment": "2.22.1",
+    "moment-duration-format": "^2.2.2",
+    "ms": "2.1.1",
+    "node-opus": "0.2.7",
+    "request": "^2.81.0",
+    "short-number": "1.0.6",
+    "simple-youtube-api": "5.0.1",
+    "youtube-info": "^1.2.0",
+    "ytdl-core": "0.20.2",
+    "jimp":"0.2.28",
+    "table": "4.0.3",
+    "pretty-ms": "3.1.0",
+    "zalgolize":"1.2.4",
+    "ascii-data-table":"2.1.1",
+       "@jarvisaoieong/node-google-translate-free": "^0.2.0",
+    "asciify": "^1.3.5",
+    "cheerio": "^1.0.0-rc.2",
+    "common-tags": "^1.6.0",
+    "concat-stream": "^1.6.0",
+    "distance-calculator": "^1.0.2",
+    "figlet": "^1.2.0",
+    "free-google-image-search": "^1.0.0",
+    "google-image-search-url-results": "^1.0.1",
+    "google-translate-api": "^2.3.0",
+    "google-translate-api-plus": "^1.0.1",
+    "goo.gl": "^0.1.4",
+    "lizard-facts": "^1.0.3",
+    "math-expression-evaluator": "^1.2.17",
+    "node-google-image-search": "^1.0.3",
+    "nodemon": "^1.13.3",
+    "opusscript": "0.0.6",
+    "pornhub": "0.0.5",
+    "pornsearch": "^2.2.5",
+    "array-sort": "^0.1.4",
+    "file-system": "^2.2.2",
+    "snekfetch": "^3.6.1"
+
   }
 }
