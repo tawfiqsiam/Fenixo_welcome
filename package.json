@@ -46,7 +46,7 @@
      "ffmpeg": "0.0.4",
     "pretty-ms": "3.1.0", 
     "ffmpeg-binaries": "^3.2.2-3",
-    "simple-youtube-api": "^5.0.2"
+    "simple-youtube-api": "^5.0.2",
 "giphy-api":"^1.2.7",
 "goo.gl":"^0.1.4"
   },
