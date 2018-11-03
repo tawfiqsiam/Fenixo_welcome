@@ -1,13 +1,13 @@
 {
-  "name": "Test",
-  "description": "Test",
-  "version": "0.0.0",
+  "name": "luxurybot",
+  "description": "A discord bot for didney worl who has an appetite for non-nutritive substances",
+  "version": "1.0.0",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
   },
   "dependencies": {
-   "discord.js": "^11.3.2",
+     "discord.js": "^11.3.2",
     "discord.js-musicbot-addon": "^1.10.3",
     "express": "^4.16.3",
     "finalhandler": "^1.1.1",
@@ -49,4 +49,3 @@
     "simple-youtube-api": "^5.0.2"
   }
 }
-
