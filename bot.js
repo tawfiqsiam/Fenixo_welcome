@@ -237,63 +237,75 @@ msg.delete();
 })
 }
 });
- client.on('message', message => {
-                    if(message.content.startsWith (prefix + "marry")) {
-                    if(!message.channel.guild) return message.reply('** This command only for servers **')
-                    var proposed = message.mentions.members.first()
-                   
-                    if(!message.mentions.members.first()) return 
-                      let embed3 = new Discord.RichEmbed()
-                         .setDescription(`اختر واحدة`)
-                          .setColor('#36393e') 
-                            message.channel.send(embed3);
-                    if(message.mentions.users.size > 1) return 
-                     let embed2 = new Discord.RichEmbed()
-                         .setDescription(`just one!`)
-                          .setColor('#36393e') 
-                            message.channel.send(embed2);
-                     if(proposed === message.author) return 
-                      let embed1 = new Discord.RichEmbed()
-                         .setDescription(`خنتى ?`)
-                          .setColor('#36393e') 
-                            message.channel.send(embed1);
-                      if(proposed === client.user) return message.reply(`** تبي تتزوجني؟ **`);
-                        let  = new Discord.RichEmbed()
-                         .setDescription(`**${proposed} 
-               بدك تقبلي عرض الزواج من ${message.author}
-               العرض لمدة 15 ثانية 
-               اكتب موافقة او لا** `)
-                          .setColor('#36393e') 
-                            message.channel.send(embed);
-               
-              const filter = m => m.content.startsWith("yes");
-              message.channel.awaitMessages(filter, { max: 1, time: 15000, errors: ['time'] })
-              .then(collected =>{ 
-                  let embed = new Discord.RichEmbed()
-                         .setDescription(`**${message.author} و ${proposed} الف الف مبروك الله يرزقكم الذرية الصالحة**`)
-                          .setColor('#36393e') 
-                            message.channel.send(embed);
-              })
-                 .catch(collected => { 
-                  let embed = new Discord.RichEmbed()
-                         .setDescription(`**السكوت علامة الرضا نقول مبروك ؟**`)
-                          .setColor('#36393e') 
-                            message.channel.send(embed);
-                 })
-                 const filte = m => m.content.startsWith("لا");
-              message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
-              .then(collected =>{ 
-                  let embed = new Discord.RichEmbed()
-                         .setDescription(`  **${message.author} تم رفض عرضك**`)
-                          .setColor('#36393e') 
-                            message.channel.send(embed);
-              })
-                      
-              
-                           
-                  
-                }
-              }); 
+
+
+client.on('ready', function(){
+  console.log(`${client.user.tag}`);
+});
+
+var user = {};
+var warn = {};
+
+client.on('message', async message =>{
+  if (message.author.id == client.user.id) return;
+  if(JSON.stringify(user).indexOf(message.author.id) == -1) {
+    user[message.author.id] = message.createdTimestamp;
+    return;
+  } else {
+    if (Date.now() - user[message.author.id] < 1000){
+      if (JSON.stringify(warn).indexOf(message.author.id) == -1) {
+        warn[message.author.id] = 1;
+      } else {
+        warn[message.author.id]++;
+      }
+      if (warn[message.author.id] < 3) {
+         message.channel.send({embed: {
+      title: "Muted a user:",
+      description: `<@${message.author.id}> please stop spamming, **${warn[message.author.id]}** warning!`,
+      color: 16000000
+    }});
+      }
+      delete user[message.author.id];
+    } else {
+      delete user[message.author.id];
+    }
+  }
+  if (warn[message.author.id] == 3) {
+     
+       let muterole = message.guild.roles.find(`name`, "muted");
+    //start of create role
+    if(!muterole){ 
+      try{
+        muterole = await message.guild.createRole({
+          name: "muted",
+          color: "#000000",
+          permissions:[]
+        }) 
+        message.guild.channels.forEach(async (channel, id) => {
+          await channel.overwritePermissions(muterole, {
+            SEND_MESSAGES: false,
+            ADD_REACTIONS: false
+          });
+        }); 
+      }catch(e){ 
+        console.log(e.stack);
+      } 
+    }
+    
+    message.guild.members.get(message.author.id).addRole(muterole);
+    var msg;
+        msg = parseInt();
+      
+      message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
+    delete user[message.author.id];
+    message.channel.send({embed: {
+      title: "Muted a user:",
+      description: `<@${message.author.id}> was spamming and exceeded the spam warning!`,
+      color: 16000000
+    }});
+  }
+});
+
               
 
 
