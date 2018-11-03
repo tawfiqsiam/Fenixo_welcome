@@ -1,13 +1,13 @@
 {
-  "name": "test",
-  "version": "2.1.0",
-  "description": "tes",
+  "name": "Test",
+  "description": "Test",
+  "version": "0.0.0",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
   },
   "dependencies": {
-      "discord.js": "^11.3.2",
+   "discord.js": "^11.3.2",
     "discord.js-musicbot-addon": "^1.10.3",
     "express": "^4.16.3",
     "finalhandler": "^1.1.1",
@@ -46,11 +46,7 @@
      "ffmpeg": "0.0.4",
     "pretty-ms": "3.1.0", 
     "ffmpeg-binaries": "^3.2.2-3",
-    "simple-youtube-api": "^5.0.2",
-"giphy-api":"^1.2.7",
-"goo.gl":"^0.1.4"
-  },
-  "engines": {
-    "node": "8.4.0"
+    "simple-youtube-api": "^5.0.2"
   }
 }
+
