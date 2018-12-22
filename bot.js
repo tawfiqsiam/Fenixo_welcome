@@ -1299,7 +1299,7 @@ u.guild.members.get(ss.executor.id).roles.forEach(r => {
     });
    
 });
-/*
+
 client.on('guildMemberAdd',member => {
 try {
     if(member.user.bot) {
@@ -1311,5 +1311,5 @@ try {
    console.log(e)
 }
 });
-*/
+
 client.login(process.env.BOT_TOKEN);
