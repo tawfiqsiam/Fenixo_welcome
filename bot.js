@@ -13,7 +13,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers `);
     console.log(`---------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setGame(`Fenixo`);
+  client.user.setGame(`✪ [ Ms-Squad ] ✪`);
 }); // 
 const prefix = '*';
 var dat = JSON.parse("{}");
@@ -21,7 +21,7 @@ function forEachObject(obj, func) {
     Object.keys(obj).forEach(function (key) { func(key, obj[key]) })
 }
 client.on('guildMemberAdd', member => {
-let channel = member.guild.channels.get("509752395199283201");
+let channel = member.guild.channels.get("508345490857787392");
 if (member.user.bot) return;
 var Canvas = require('canvas')
 var jimp = require('jimp')
@@ -156,7 +156,7 @@ client.on('message', message => {
 
 client.on("guildMemberAdd", (member) => {
 
-let channel = "509752395199283201"
+let channel = "508345490857787392"
 
     if (!channel) {
 
@@ -178,7 +178,7 @@ let channel = "509752395199283201"
 
     while (!guild)
 
-        guild = client.guilds.get("498244857459114031");
+        guild = client.guilds.get("508335358677876747");
 
     guild.fetchInvites().then((data) => {
 
