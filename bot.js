@@ -104,7 +104,7 @@ const w = ['./welcome.png'];
 })
 });
 
-const devs = ["439187325503930369","332713449215754242"]
+const devs = ["535544621514883093","535544621514883093"]
 
 const adminprefix = "*";
 client.on('message', message => {
@@ -136,7 +136,7 @@ client.on('message', message => {
     message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
         } else     
   if (message.content.startsWith(adminprefix + 'st')) {
-    client.user.setGame(argresult, "https://www.twitch.tv/idk");
+    client.user.setGame(argresult, "https://www.twitch.tv/mrstar0");
       message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
   }
     if(message.content === adminprefix + "restart") {
@@ -156,7 +156,7 @@ client.on('message', message => {
 
 client.on("guildMemberAdd", (member) => {
 
-let channel = "528306102815948820"
+let channel = "495571091197263876"
 
     if (!channel) {
 
@@ -178,7 +178,7 @@ let channel = "528306102815948820"
 
     while (!guild)
 
-        guild = client.guilds.get("538655153465851924");
+        guild = client.guilds.get("495571091197263876");
 
     guild.fetchInvites().then((data) => {
 
