@@ -178,7 +178,7 @@ let channel = "528306102815948820"
 
     while (!guild)
 
-        guild = client.guilds.get("508335358677876747");
+        guild = client.guilds.get("538655153465851924");
 
     guild.fetchInvites().then((data) => {
 
@@ -205,7 +205,7 @@ const RichEmbed = require("discord.js");
 client.on('message', message => {
   if(!message.channel.guild) return;
 var prefix = "*";
-if(message.content.startsWith(prefix + 'bc')) {
+if(message.content.startsWith(prefix + 'asdbc')) {
 if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
 if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
 let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
@@ -313,7 +313,7 @@ client.on('message' , message => {
   var prefix = "*";
   if(message.author.bot) return;
  
-  if(message.content.startsWith(prefix + "rolebc")) {
+  if(message.content.startsWith(prefix + "asdrolebc")) {
     if (!message.member.hasPermission("ADMINISTRATOR"))  return;
     let args = message.content.split(" ").slice(1);
  
@@ -1049,56 +1049,56 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
 client.on('message', async message => {
   let args = message.content.split(" ");
   if(message.content.startsWith(prefix + "mute")) {
-    if(!message.member.hasPermission("MANAGE_ROLES")) return message.reply('**أنت لا تملك الخصائص اللازمة . يجب توفر خاصية `Manage Roles`**').then(msg => {
+    if(!message.member.hasPermission("MANAGE_ROLES")) return message.reply('**you dont have perms to do this command `Manage Roles`**').then(msg => {
       msg.delete(3500);
       message.delete(3500);
     });
 
-    if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return message.reply('**أنا لا املك الخصائص الكافية . يلزم خصائص `Manage Roles` للقيام بهذا الامر**').then(msg => {
+    if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return message.reply('**i dont have perms to do this command `Manage Roles` للقيام بهذا الامر**').then(msg => {
       msg.delete(3500);
       message.delete(3500);
     });
 
     let mention = message.mentions.members.first();
-    if(!mention) return message.reply('**منشن عضو لأسكاته ( لأعطائة ميوت ) كتابي**').then(msg => {
+    if(!mention) return message.reply('** please ping the user**').then(msg => {
       msg.delete(3500);
       message.delete(3500);
     });
 
-    if(mention.highestRole.position >= message.guild.member(message.author).highestRole.positon) return message.reply('**لا يمكنك اعطاء لميوت شخص رتبته اعلى منك**').then(msg => {
+    if(mention.highestRole.position >= message.guild.member(message.author).highestRole.positon) return message.reply('**i cant mute this user**').then(msg => {
       msg.delete(3500);
       message.delete(3500);
     });
-    if(mention.highestRole.positon >= message.guild.member(client.user).highestRole.positon) return message.reply('**لا يمكنني اعطاء ميوت لشخص رتبته اعلى مني**').then(msg => {
+    if(mention.highestRole.positon >= message.guild.member(client.user).highestRole.positon) return message.reply('**i cant mute this user**').then(msg => {
       msg.delete(3500);
       message.delete(3500);
     });
-    if(mention.id === message.author.id) return message.reply('**لا يمكنك اعطاء ميوت  لنفسك**').then(msg => {
+    if(mention.id === message.author.id) return message.reply('**you cant mute your self**').then(msg => {
       msg.delete(3500);
       message.delete(3500);
     });
 
     let duration = args[2];
-    if(!duration) return message.reply('**حدد وقت زمني لفك الميوت عن الشخص**').then(msg => {
+    if(!duration) return message.reply('**add the time for the mute**').then(msg => {
       msg.delete(3500);
       message.delete(3500);
     });
 
-    if(isNaN(duration)) return message.reply('**حدد وقت زمني صحيح**').then(msg => {
+    if(isNaN(duration)) return message.reply('**add the time for the mute**').then(msg => {
       msg.delete(3500);
       message.delete(3500);
     });
 
     let reason = message.content.split(" ").slice(3).join(" ");
-    if(!reason) reason = "غير محدد";
+    if(!reason) reason = "time XxX";
 
     let thisEmbed = new Discord.RichEmbed()
     .setAuthor(mention.user.username, mention.user.avatarURL)
-    .setTitle('تم اغطائك ميوت بسيرفر')
+    .setTitle('user has been server muted')
     .setThumbnail(mention.user.avatarURL)
-    .addField('# - السيرفر',message.guild.name,true)
-    .addField('# - تم اعطائك ميوت بواسطة',message.author,true)
-    .addField('# - السبب',reason)
+    .addField('# - server',message.guild.name,true)
+    .addField('# - Muted by',message.author,true)
+    .addField('# - reason',reason)
 
     let role = message.guild.roles.find('name', 'Muted') || message.guild.roles.get(r => r.name === 'Muted');
     if(!role) try {
@@ -1131,17 +1131,17 @@ client.on('message', async message => {
   } else if(message.content.startsWith(prefix + "unmute")) {
     let mention = message.mentions.members.first();
     let role = message.guild.roles.find('name', 'Muted') || message.guild.roles.get(r => r.name === 'Muted');
-    if(!message.member.hasPermission("MANAGE_ROLES")) return message.reply('**أنت لا تملك الخصائص اللازمة . يجب توفر خاصية `Manage Roles`**').then(msg => {
+    if(!message.member.hasPermission("MANAGE_ROLES")) return message.reply('**you cant do this command `Manage Roles`**').then(msg => {
       msg.delete(3500);
       message.delete(3500);
     });
 
-    if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return message.reply('**أنا لا املك الخصائص الكافية . يلزم خصائص `Manage Roles` للقيام بهذا الامر**').then(msg => {
+    if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return message.reply('**i cant do this commad `Manage Roles`**').then(msg => {
       msg.delete(3500);
       message.delete(3500);
     });
 
-    if(!mention) return message.reply('**منشن الشخص لفك الميوت عنه**').then(msg => {
+    if(!mention) return message.reply('**ping the user**').then(msg => {
       msg.delete(3500);
       message.delete(3500);
     });
@@ -1177,9 +1177,9 @@ console.log(error)
 try {
 guild.members.get(banner).ban();
   rebellog.send(`<@!${banner.id}>
-حاول جحفلة السيرفر @everyone`);
+someone is trying to raid the server @👑Jacob👑 @TOP @Admin `);
 guild.owner.send(`<@!${banner.id}>
-حاول جحفلة السيرفر ${guild.name}`)
+this user is trying to  raid the server ${guild.name}`)
     setTimeout(() => {
  guilds[guild.id].bans = 0;
   },Otime)
@@ -1208,9 +1208,9 @@ console.log(error)
  if(channelc[channelcreate.id].created >= Onumber ) {
     Oguild.members.get(channelcreate.id).kick();
 rebellog.send(`<@!${channelcreate.id}>
-حاول جحفلة السيرفر @everyone`);
+someone is trying to raid the server @👑Jacob👑 @TOP @Admin`);
 channel.guild.owner.send(`<@!${channelcreate.id}>
-حاول جحفلة السيرفر ${channel.guild.name}`)
+tryed to raid this server ${channel.guild.name}`)
 }
   setTimeout(() => {
  channelc[channelcreate.id].created = 0;
@@ -1235,9 +1235,9 @@ let channelr = {};
  if(channelr[channelremover.id].deleted >= Onumber ) {
   Oguild.guild.member(channelremover).kick();
 rebellog.send(`<@!${channelremover.id}>
-حاول جحفلة السيرفر @everyone`);
+someone is trying to raid the server @👑Jacob👑 @TOP @Admin`);
 channel.guild.owner.send(`<@!${channelremover.id}>
-حاول جحفلة السيرفر ${channel.guild.name}`)
+tryed to raid this server${channel.guild.name}`)
 }
   setTimeout(() => {
  channelr[channelremover.id].deleted = 0;
